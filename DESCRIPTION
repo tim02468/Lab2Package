@@ -1,11 +1,14 @@
 Package: Lab2Package
 Type: Package
-Title: What the Package Does (Title Case)
+Title: R package for lab 2.
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Kuan-Ting Liu
+Maintainer: Kuan-Ting Liu <kl925@cornell.edu>
+Description: This package provides two functions for making boxplot and for extracting a basic statistic. It also includes one DRG dataframe.
+Imports:
+    dplyr,
+    ggplot2
+License: None
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.1.0
