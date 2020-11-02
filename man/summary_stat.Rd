@@ -2,8 +2,7 @@
 % Please edit documentation in R/script.R
 \name{summary_stat}
 \alias{summary_stat}
-\title{Title
-This function return a basic statistic from the given dataframe.}
+\title{Summary stat}
 \usage{
 summary_stat(df, type_of_stat)
 }
@@ -16,6 +15,10 @@ summary_stat(df, type_of_stat)
 res A value from the given type of statistic.
 }
 \description{
-Title
 This function return a basic statistic from the given dataframe.
+}
+\examples{
+df <- DRG_data
+m <- summary_stat(df, "mean")
+
 }

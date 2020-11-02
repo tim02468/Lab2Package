@@ -2,8 +2,7 @@
 % Please edit documentation in R/script.R
 \name{make_boxplot}
 \alias{make_boxplot}
-\title{Title
-This function produce a boxplot from given dataframe and given type of payment.}
+\title{Make boxplot}
 \usage{
 make_boxplot(df, payment)
 }
@@ -16,6 +15,11 @@ make_boxplot(df, payment)
 g A boxplot.
 }
 \description{
-Title
 This function produce a boxplot from given dataframe and given type of payment.
+}
+\examples{
+df <- DRG_data
+make_boxplot(df, "Average.Medicare.Payments")
+
+
 }

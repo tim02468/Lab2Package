@@ -1,4 +1,5 @@
-#' Title
+#' Make boxplot
+#'
 #' This function produce a boxplot from given dataframe and given type of payment.
 #'
 #' @param df A data include hospital-specific charges for the more than 3,000 U.S. hospitals that receive Medicare Inpatient Prospective Payment System (IPPS) payments. See https://data.cms.gov/Medicare-Inpatient/Inpatient-Prospective-Payment-System-IPPS-Provider/97k6-zzx3 for more information.
@@ -8,16 +9,22 @@
 #' @export
 #'
 #' @examples
+#' df <- DRG_data
+#' make_boxplot(df, "Average.Medicare.Payments")
+#'
+#'
 make_boxplot <- function(df, payment) {
   g <- ggplot(df, aes(x = DRG.Definition, y = get(payment))) +
     geom_boxplot() +
+    labs(title = paste0("Boxplot of ", payment, " for all DRG codes"), y = "$") +
     theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 
   return(g)
 }
 
 
-#' Title
+#' Summary stat
+#'
 #' This function return a basic statistic from the given dataframe.
 #'
 #' @param df A data include hospital-specific charges for the more than 3,000 U.S. hospitals that receive Medicare Inpatient Prospective Payment System (IPPS) payments. See https://data.cms.gov/Medicare-Inpatient/Inpatient-Prospective-Payment-System-IPPS-Provider/97k6-zzx3 for more information.
@@ -27,6 +34,9 @@ make_boxplot <- function(df, payment) {
 #' @export
 #'
 #' @examples
+#' df <- DRG_data
+#' m <- summary_stat(df, "mean")
+#'
 summary_stat <- function(df, type_of_stat) {
   res <- list(mean = mean(df$Average.Medicare.Payments), std = sd(df$Average.Medicare.Payments), median = median(df$Average.Medicare.Payments))
   return(res[names(res) == type_of_stat])
